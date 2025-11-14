@@ -24,3 +24,11 @@ class Schema(Enum):
             vol.Required("target_uuid"): cv.string
         }
     )
+    TRY_CONNECT = make_entity_service_schema(
+        {
+        }
+    )
+    DISCONNECT = make_entity_service_schema(
+        {
+        }
+    )

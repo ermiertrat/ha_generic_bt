@@ -27,7 +27,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
     platform = entity_platform.async_get_current_platform()
     platform.async_register_entity_service("write_gatt", Schema.WRITE_GATT.value, "write_gatt")
     platform.async_register_entity_service("read_gatt", Schema.READ_GATT.value, "read_gatt")
-
+    platform.async_register_entity_service("try_connect",Schema.TRY_CONNECT.value,"try_connect")
+    platform.async_register_entity_service("disconnect",Schema.DISCONNECT.value,"disconnect")
+    
 
 class GenericBTBinarySensor(GenericBTEntity, BinarySensorEntity):
     """Representation of a Generic BT Binary Sensor."""
@@ -49,5 +51,14 @@ class GenericBTBinarySensor(GenericBTEntity, BinarySensorEntity):
     async def read_gatt(self, target_uuid):
         await self._device.read_gatt(target_uuid)
         self.async_write_ha_state()
+    async def try_connect(self):
+        await self._device.try_connect()
+        self.async_write_ha_state()
+
+    async def disconnect(self):
+        await self._device.disconnect()
+        self.async_write_ha_state()
+
+        
 
 

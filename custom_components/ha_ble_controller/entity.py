@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import logging
-from generic_bt_api.device import GenericBTDevice
+from .ha_ble_controller_api.device import GenericBTDevice
 from homeassistant.components.bluetooth.passive_update_coordinator import PassiveBluetoothCoordinatorEntity
 from homeassistant.helpers import device_registry as dr
 

@@ -54,6 +54,13 @@ disconnect:
       domain: binary_sensor
       integration: ha_ble_controller
   fields:
+    force:
+      name: Force Disconnect 
+      description: Force disconnect BLE client without waiting for other readers/writers
+      required: true
+      default: false
+      selector:
+        boolean:
 try_connect:
   name: Try connect to target device
   description: Try connect to target device
@@ -61,4 +68,3 @@ try_connect:
     entity:
       domain: binary_sensor
       integration: ha_ble_controller
-  fields:

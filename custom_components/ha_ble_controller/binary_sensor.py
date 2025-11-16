@@ -56,7 +56,7 @@ class GenericBTBinarySensor(GenericBTEntity, BinarySensorEntity):
         self.async_write_ha_state()
 
     async def disconnect(self):
-        await self._device.disconnect()
+        await self._device.disconnect_client()
         self.async_write_ha_state()
 
         

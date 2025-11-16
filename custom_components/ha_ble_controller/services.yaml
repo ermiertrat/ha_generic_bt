@@ -46,3 +46,19 @@ read_gatt:
       required: true
       selector:
         text:
+disconnect:
+  name: Try disconnect to target device
+  description: Try disconnect to target device
+  target:
+    entity:
+      domain: binary_sensor
+      integration: ha_ble_controller
+  fields:
+try_connect:
+  name: Try connect to target device
+  description: Try connect to target device
+  target:
+    entity:
+      domain: binary_sensor
+      integration: ha_ble_controller
+  fields:

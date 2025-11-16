@@ -30,5 +30,7 @@ class Schema(Enum):
     )
     DISCONNECT = make_entity_service_schema(
         {
+            vol.Required("force"): cv.boolean
+
         }
     )
